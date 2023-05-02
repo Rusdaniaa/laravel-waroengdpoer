@@ -19,4 +19,7 @@ Route::get('/', function () {
 
 Route::get('/layouts', function () {
     return view('layouts.main');
-})->name('layouts.index');
+})->name('laporan.index');
+Route::get('/laporan', function () {
+    return view('laporan.index');
+})->name('laporan.index');

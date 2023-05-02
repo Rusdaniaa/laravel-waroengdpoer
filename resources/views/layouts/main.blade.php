@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Dashboard | D'Poer Waroeng </title>
+        <title>@yield('title', 'Waroeng Dpoer Apps')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
         <meta content="Coderthemes" name="author">
@@ -78,7 +78,8 @@
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="apps-chat.html" class="side-nav-link">
+                         
+                            <a href="{{ route('laporan.index') }}" class="side-nav-link">
                                 <i class="uil-clipboard-alt"></i>
                                 <span> Laporan </span>
                             </a>
@@ -129,37 +130,8 @@
                                     </form>
                                 </div>
                             </li>
-                            <li class="dropdown notification-list topbar-dropdown">
-                                <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                    <img src="assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12"> 
-                                    <span class="align-middle d-none d-sm-inline-block">English</span> <i class="mdi mdi-chevron-down d-none d-sm-inline-block align-middle"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu">
+                            
 
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <img src="assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
-                                    </a>
-                
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <img src="assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
-                                    </a>
-
-                                </div>
-                            </li>
-
- 
 
                             <li class="notification-list">
                                 <a class="nav-link end-bar-toggle" href="javascript: void(0);">
@@ -231,7 +203,7 @@
                         </div>
                     </div>
                     <!-- end Topbar -->
-
+                    @yield('content')
                 <!-- Footer Start -->
                 <footer class="footer">
                     <div class="container-fluid">
