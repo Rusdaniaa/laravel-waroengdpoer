@@ -27,3 +27,6 @@ Route::get('/layouts', function () {
 Route::get('/laporan', function () {
     return view('laporan.index');
 })->name('laporan.index');
+Route::get('/barang', function () {
+    return view('barang.index');
+})->name('barang.index');
