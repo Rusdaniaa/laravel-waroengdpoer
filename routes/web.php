@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/login', function () {
     return view('views.login');
-});
+})->name('views.login');
 
 Route::get('/', function () {
     return view('welcome');
