@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', 'LoginController@showLoginForm')->name('login');
-Route::post('/login', 'LoginController@login');
-
+Route::get('/login', function () {
+    return view('layouts.login');
+});
 
 Route::get('/', function () {
     return view('welcome');
