@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', function () {
-    return view('login.login');
-})->name('login.login');
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,3 +28,7 @@ Route::get('/laporan', function () {
 Route::get('/barang', function () {
     return view('barang.index');
 })->name('barang.index');
+
+Route::get('/login', function () {
+    return view('login.login');
+})->name('login.login');
