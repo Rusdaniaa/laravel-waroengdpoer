@@ -71,7 +71,7 @@
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="apps-chat.html" class="side-nav-link">
+                            <a href="{{ route('barang.index') }}" class="side-nav-link">
                                 <i class="dripicons-shopping-bag"></i>
                                 <span> Barang </span>
                             </a>
