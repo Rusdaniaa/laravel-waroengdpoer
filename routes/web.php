@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BarangController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,9 +25,7 @@ Route::get('/layouts', function () {
 Route::get('/laporan', function () {
     return view('laporan.index');
 })->name('laporan.index');
-Route::get('/barang', function () {
-    return view('barang.index');
-})->name('barang.index');
+Route::get('/barang', 'App\Http\Controllers\BarangController@index')->name('barang.index');
 
 Route::get('/login', function () {
     return view('login.login');
