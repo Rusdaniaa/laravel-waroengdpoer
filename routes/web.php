@@ -33,3 +33,7 @@ Route::get('/tambah', 'App\Http\Controllers\tambahController@index')
 Route::get('/login', function () {
     return view('login.login');
 })->name('login.login');
+
+Route::get('/logout', function () {
+    return view('logout');
+});
