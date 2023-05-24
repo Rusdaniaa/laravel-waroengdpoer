@@ -23,7 +23,7 @@
                                             </div>
                                             <div class="col-xl-4">
                                                 <div class="text-xl-end mt-xl-0 mt-2">
-                                                    <button type="button" class="btn btn-danger mb-2 me-2"><i class="mdi mdi-basket me-1"></i> Add New Order</button>
+                                                <a href="{{ route('tambah.tambah') }}" class="btn btn-danger mb-2 me-2">Tambah Data</a>
                                                     <button type="button" class="btn btn-light mb-2">Export</button>
                                                 </div>
                                             </div><!-- end col-->

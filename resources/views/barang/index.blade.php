@@ -18,7 +18,7 @@
                                             <li class="breadcrumb-item active">Sellers</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Sellers</h4>
+                                    <h4 class="page-title">Barang</h4>
                                 </div>
                             </div>
                         </div>     
@@ -42,9 +42,9 @@
                                                                     <th>Id Barang</th>
                                                                     <th>Nama Barang</th>
                                                                     <th>Harga</th>
-                                                                    <th>Product</th>
-                                                                    <th> Deskripsi</th>
-                                                                    <th style="width: 85px;">Action</th>
+                                                                    <th>Produk</th>
+                                                                    <th>Deskripsi</th>
+                                                                    <th>Action</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -53,8 +53,7 @@
                                                                         <td>
                                                                         {{$b->id}}
                                                                         </td>
-                                                                        <td>
-                                                                        {{$b->nama_barang}}
+                                                                        <td><img src="{{ asset($b->nama_barang) }}" alt="Gambar">
                                                                         </td>
                                                                         <td>
                                                                         {{$b->harga}}

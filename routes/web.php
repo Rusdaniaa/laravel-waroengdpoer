@@ -25,7 +25,10 @@ Route::get('/layouts', function () {
 Route::get('/laporan', function () {
     return view('laporan.index');
 })->name('laporan.index');
-Route::get('/barang', 'App\Http\Controllers\BarangController@index')->name('barang.index');
+Route::get('/barang', 'App\Http\Controllers\BarangController@index')
+->name('barang.index');
+Route::get('/tambah', 'App\Http\Controllers\tambahController@index')
+->name('tambah.tambah');
 
 Route::get('/login', function () {
     return view('login.login');
