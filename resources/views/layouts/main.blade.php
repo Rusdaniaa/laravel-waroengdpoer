@@ -96,8 +96,7 @@
                                 <i class="mdi mdi-logout-variant"></i>
                                 <span> Logout </span>
                             </a>
-                        </li>
-                         
+                        </li>    
                     </ul>
 
                     
