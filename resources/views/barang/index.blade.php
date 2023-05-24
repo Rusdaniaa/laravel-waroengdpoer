@@ -15,7 +15,7 @@
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Waroeng D'poer</a></li>
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Kasir</a></li>
-                                            <li class="breadcrumb-item active">Cetak</li>
+                                             <li class="breadcrumb-item active">Cetak</li>
                                         </ol>
                                     </div>
                                     <h4 class="page-title">Kasir</h4>
