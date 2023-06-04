@@ -19,12 +19,7 @@
                                         </ol>
                                     </div>
                                     <h4 class="page-title">Kasir</h4>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">eCommerce</a></li>
-                                            <li class="breadcrumb-item active">Sellers</li>
-                                        </ol>
-                                    </div>
-                                    <h4 class="page-title">Sellers</h4>
+
                                 </div>
                             </div>
                         </div>     
@@ -47,6 +42,7 @@
                                                             <tr>
                                                                     <th>Id Barang</th>
                                                                     <th>Nama Barang</th>
+                                                                    <th>Barang</th>
                                                                     <th>Harga</th>
                                                                     <th>Produk</th>
                                                                     <th>Deskripsi</th>
@@ -59,7 +55,10 @@
                                                                         <td>
                                                                         {{$b->id}}
                                                                         </td>
-                                                                        <td><img src="{{ asset($b->nama_barang) }}" alt="Gambar">
+                                                                        <td>
+                                                                        {{$b->nama_barang}}
+                                                                        </td>
+                                                                        <td><img src="{{ asset('assets/images/products/'.$b->barang) }}" alt="Gambar">
                                                                         </td>
                                                                         <td>
                                                                         {{$b->harga}}

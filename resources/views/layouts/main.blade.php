@@ -92,7 +92,7 @@
                         </li>
                              
                         <li class="side-nav-item">
-                            <a href="apps-chat.html" class="side-nav-link">
+                            <a href="{{ route('logout.logout') }}" class="side-nav-link">
                                 <i class="mdi mdi-logout-variant"></i>
                                 <span> Logout </span>
                             </a>
