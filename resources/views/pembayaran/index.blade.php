@@ -40,9 +40,11 @@
                                                         <table class="table table-centered table-borderless table-hover w-100 dt-responsive nowrap dataTable no-footer dtr-inline collapsed" id="products-datatable" role="grid" aria-describedby="products-datatable_info" style="width: 1113px;">
                                                             <thead class="table-light">
                                                             <tr>
-                                                                    <th>No</th>
-                                                                    <th>Tanggal</th>
-                                                                    <th>Pemasukan</th>            
+                                                                    <th>No Transaksi</th>
+                                                                    <th>Total pembayaran</th>
+                                                                    <th>Status</th>
+                                                                    <th>Tanggal</th>    
+                                                                    <th>Action</th>             
                                                                 </tr>
                                                             </thead>
                                                             <tbody>

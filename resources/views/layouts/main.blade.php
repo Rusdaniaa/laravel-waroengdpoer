@@ -64,9 +64,9 @@
                         <li class="side-nav-title side-nav-item">Apps</li>
 
                         <li class="side-nav-item">
-                            <a href="apps-calendar.html" class="side-nav-link">
+                            <a href="{{ route('pembayaran.index') }}" class="side-nav-link">
                                 <i class="uil-store"></i>
-                                <span> Kasir </span>
+                                <span> Pembayaran </span>
                             </a>
                         </li>
 
@@ -75,10 +75,10 @@
                                 <i class="dripicons-shopping-bag"></i>
                                 <span> Barang </span>
                             </a>
-                        </li>
+                        </li>                        
 
                         <li class="side-nav-item">
-                         
+              
                             <a href="{{ route('laporan.index') }}" class="side-nav-link">
                                 <i class="uil-clipboard-alt"></i>
                                 <span> Laporan </span>

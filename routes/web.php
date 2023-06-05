@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\tambahController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,11 +29,13 @@ Route::get('/laporan', function () {
 })->name('laporan.index');
 Route::get('/barang', 'App\Http\Controllers\BarangController@index')
 ->name('barang.index');
-Route::get('/tambah', 'App\Http\Controllers\tambahController@index')
-->name('tambah.tambah');
+Route::get('/tambahbarang', [tambahController::class, 'toTambah']);
+Route::post('/tambahbarang/save', [tambahController::class, 'saveData']);
 Route::get('/logout', 'App\Http\Controllers\LogoutController@index')->name('logout.logout');
 Route::get('/layouts', 'App\Http\Controllers\layoutController@index')
 ->name('layouts.main');
+Route::get('/pembayaran', 'App\Http\Controllers\TransaksiController@index')
+->name('pembayaran.index');
 //Route::get('/logout', 'Auth\LoginController@logout')->name('logout.logout');
 
 

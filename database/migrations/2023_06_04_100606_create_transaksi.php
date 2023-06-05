@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('layouts', function (Blueprint $table) {
-            $table->id();
+        Schema::create('transaksis', function (Blueprint $table) {
+            $table->id('no_transaksi');
+            $table->tinyInteger('total_transaksi');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('layouts');
+        Schema::dropIfExists('transaksi');
     }
 };

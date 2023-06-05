@@ -44,7 +44,6 @@
                                                                     <th>Nama Barang</th>
                                                                     <th>Barang</th>
                                                                     <th>Harga</th>
-                                                                    <th>Produk</th>
                                                                     <th>Deskripsi</th>
                                                                     <th>Action</th>
                                                                 </tr>
@@ -62,10 +61,7 @@
                                                                         </td>
                                                                         <td>
                                                                         {{$b->harga}}
-                                                                        </td>
-                                                                        <td>
-                                                                        {{$b->stok}}
-                                                                        </td>
+                                                                        </td> 
                                                                         <td>
                                                                         {{$b->keterangan}}
                                                                         </td> 
