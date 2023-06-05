@@ -24,9 +24,9 @@ Route::get('/', function () {
 Route::get('/layouts', function () {
     return view('layouts.main');
 })->name('laporan.index');
-Route::get('/laporan', function () {
-    return view('laporan.index');
-})->name('laporan.index');
+Route::get('/laporan', 'App\Http\Controllers\LaporanController@index')
+->name('laporan.index');
+Route::post('/laporan/save', [tambahController::class, 'saveData']);
 Route::get('/barang', 'App\Http\Controllers\BarangController@index')
 ->name('barang.index');
 Route::get('/tambahbarang', [tambahController::class, 'toTambah']);
