@@ -46,17 +46,17 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            @foreach($transaksis as $bayar)
+                                                            
                                                                     <tr>
                                                                         <td>
-                                                                        {{$bayar->no_transaksi}}
+                                                                        
                                                                         </td>
                                                                         <td>
-                                                                        {{$bayar->total_transaksi}}
+                                                                        
                                                                         </td>
                                                                         
                                                                         <td>
-                                                                        {{$bayar->status}}
+                                                                        
                                                                         </td>
 
                                                                         
@@ -68,7 +68,7 @@
                                                                         </td>
                                                                         
                                                                     </tr>
-                                                                    @endforeach
+                                                                    
                                                             </tbody>
                                                             </table>
                                                             <nav class="mt-4">

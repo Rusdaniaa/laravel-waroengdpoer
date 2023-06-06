@@ -55,7 +55,7 @@
                         <li class="side-nav-title side-nav-item">Navigation</li>
 
                         <li class="side-nav-item">
-                            <a href="dashboard-analytics.html" class="side-nav-link">
+                            <a href="{{ url('dashboard') }}" class="side-nav-link">
                                 <i class="uil-home-alt"></i>
                                 <span> Dashboards </span>
                             </a>
@@ -64,22 +64,34 @@
                         <li class="side-nav-title side-nav-item">Apps</li>
 
                         <li class="side-nav-item">
-                            <a href="{{ route('pembayaran.index') }}" class="side-nav-link">
+                            <a href="{{ url('pembayaran') }}" class="side-nav-link">
                                 <i class="uil-store"></i>
                                 <span> Pembayaran </span>
                             </a>
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="{{ route('barang.index') }}" class="side-nav-link">
+                            <a href="{{ url('barang') }}" class="side-nav-link">
                                 <i class="dripicons-shopping-bag"></i>
                                 <span> Barang </span>
                             </a>
-                        </li>                        
+                        </li>
+                        <li class="side-nav-item">
+                            <a href="{{ url('meja') }}" class="side-nav-link">
+                                <i class="mdi mdi-18px mdi-table-chair"></i>
+                                <span> meja </span>
+                            </a>
+                        </li>
+                        <li class="side-nav-item">
+                            <a href="{{ url('pelanggan') }}" class="side-nav-link">
+                                <i class="dripicons-user-group"></i>
+                                <span> Customer </span>
+                            </a>
+                        </li>                         
 
                         <li class="side-nav-item">
               
-                            <a href="{{ route('laporan.index') }}" class="side-nav-link">
+                            <a href="{{ url('laporan') }}" class="side-nav-link">
                                 <i class="uil-clipboard-alt"></i>
                                 <span> Laporan </span>
                             </a>
@@ -92,7 +104,7 @@
                         </li>
                              
                         <li class="side-nav-item">
-                            <a href="{{ route('logout.logout') }}" class="side-nav-link">
+                            <a href="{{ url('logout') }}" class="side-nav-link">
                                 <i class="mdi mdi-logout-variant"></i>
                                 <span> Logout </span>
                             </a>

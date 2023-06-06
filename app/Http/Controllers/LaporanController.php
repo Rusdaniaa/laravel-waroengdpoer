@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Laporan;
+use App\Models\laporan;
+use App\Models\transaksi;
 class LaporanController extends Controller
 {
     public function index(){
-        $laporans = Laporan::all();
+       
+        $transaksis = transaksi::all(); 
 
-        return view('laporan.index', compact('laporans'));
-
+        return view('laporan.index', compact('transaksis'));
         
     }
 }

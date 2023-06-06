@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\tambahController;
-
+use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\MejaController;
+use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\TransaksiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,28 +25,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/layouts', function () {
-    return view('layouts.main');
-})->name('laporan.index');
-Route::get('/laporan', 'App\Http\Controllers\LaporanController@index')
-->name('laporan.index');
-Route::post('/laporan/save', [tambahController::class, 'saveData']);
-Route::get('/barang', 'App\Http\Controllers\BarangController@index')
-->name('barang.index');
+
+
+Route::get('/laporan', [LaporanController::class, 'index']);
+Route::get('/dashboard', [dashboardController::class, 'index']);
+Route::get('/meja', [MejaController::class, 'index']);
+Route::get('/pelanggan', [PelangganController::class, 'index']);
+Route::get('/barang', [BarangController::class, 'index']);
 Route::get('/tambahbarang', [tambahController::class, 'toTambah']);
 Route::post('/tambahbarang/save', [tambahController::class, 'saveData']);
-Route::get('/logout', 'App\Http\Controllers\LogoutController@index')->name('logout.logout');
-Route::get('/layouts', 'App\Http\Controllers\layoutController@index')
-->name('layouts.main');
-Route::get('/pembayaran', 'App\Http\Controllers\TransaksiController@index')
-->name('pembayaran.index');
+Route::get('/logout', [LogoutController::class, 'index']);
+Route::get('/pembayaran', [TransaksiController::class, 'index']);
+
 //Route::get('/logout', 'Auth\LoginController@logout')->name('logout.logout');
-
-
-Route::get('/login', function () {
-    return view('login.login');
-})->name('login.login');
-
-//Route::get('/logout', function () {
-  //  return view('logout.logout');
-//})->name('logout.logout');

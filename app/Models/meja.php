@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class laporan extends Model
+class meja extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'no_transaksi', 'total_transaksi', 'Pemasukan'
-    ];
 }
