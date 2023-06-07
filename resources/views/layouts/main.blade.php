@@ -8,16 +8,26 @@
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
         <meta content="Coderthemes" name="author">
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{url('assets/images/favicon.ico')}}">
+
+        <link rel="stylesheet" href="//cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
 
         <!-- third party css -->
-        <link href="assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
+        <link href="{{asset('assets/css/vendor/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet" type="text/css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <!-- third party css end -->
 
         <!-- App css -->
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
-        <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
+        <link href="{{url('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{url('assets/css/app.min.css')}}" rel="stylesheet" type="text/css" id="light-style">
+        <link href="{{url('assets/css/app-dark.min.css')}}" rel="stylesheet" type="text/css" id="dark-style">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
 
     </head>
 
@@ -28,22 +38,22 @@
             <div class="leftside-menu">
     
                 <!-- LOGO -->
-                <a href="index.html" class="logo text-center logo-light">
+                <a href="{{ url('layout') }}" class="logo text-center logo-light">
                     <span class="logo-lg">
-                        <img src="assets/images/logo.png" alt="" height="16">
+                        <img src="{{url('assets/images/logo.png')}}" alt="" height="16">
                     </span>
                     <span class="logo-sm">
-                        <img src="assets/images/logo_sm.png" alt="" height="16">
+                        <img src="{{url('assets/images/logo_sm.png')}}" alt="" height="16">
                     </span>
                 </a>
 
                 <!-- LOGO -->
-                <a href="index.html" class="logo text-center logo-dark">
+                <a href="{{ url('layout') }}" class="logo text-center logo-dark">
                     <span class="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="" height="16">
+                        <img src="{{url('assets/images/logo-dark.png')}}" alt="" height="16">
                     </span>
                     <span class="logo-sm">
-                        <img src="assets/images/logo_sm_dark.png" alt="" height="16">
+                        <img src="{{url('assets/images/logo_sm_dark.png')}}" alt="" height="16">
                     </span>
                 </a>
     
@@ -153,7 +163,7 @@
                             <li class="dropdown notification-list">
                                 <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                     <span class="account-user-avatar"> 
-                                        <img src="assets/images/users/avatar-1.png" alt="user-image" class="rounded-circle">
+                                        <img src="{{url('assets/images/users/avatar-1.png')}}" alt="user-image" class="rounded-circle">
                                     </span>
                                     <span>
                                         <span class="account-user-name">Waroeng D'poer</span>
@@ -250,17 +260,19 @@
         <!-- /End-bar -->
 
         <!-- bundle -->
-        <script src="assets/js/vendor.min.js"></script>
-        <script src="assets/js/app.min.js"></script>
-
+        <script src="{{url('assets/js/vendor.min.js')}}"></script>
+        <script src="{{url('assets/js/app.min.js')}}"></script>
+        
+        
         <!-- third party js -->
-        <script src="assets/js/vendor/apexcharts.min.js"></script>
-        <script src="assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
-        <script src="assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="{{url('assets/js/vendor/apexcharts.min.js')}}"></script>
+        <script src="{{url('assets/js/vendor/jquery-jvectormap-1.2.2.min.js')}}"></script>
+        <script src="{{url('assets/js/vendor/jquery-jvectormap-world-mill-en.js')}}"></script>
         <!-- third party js ends -->
-
+        
         <!-- demo app -->
-        <script src="assets/js/pages/demo.dashboard.js"></script>
+        <script src="{{url('assets/js/pages/demo.dashboard.js')}}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
         <!-- end demo js-->
     </body>
 </html>

@@ -40,7 +40,7 @@
                                                         <table class="table table-centered table-borderless table-hover w-100 dt-responsive nowrap dataTable no-footer dtr-inline collapsed" id="products-datatable" role="grid" aria-describedby="products-datatable_info" style="width: 1113px;">
                                                             <thead class="table-light">
                                                             <tr>
-                                                                    <th>Id Barang</th>
+                                                                    <th>Id</th>
                                                                     <th>Nama Barang</th>
                                                                     <th>Barang</th>
                                                                     <th>Harga</th>
@@ -49,26 +49,25 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            @foreach($barangs as $b)
+                                                            @foreach($data as $databarang)
                                                                     <tr>
-                                                                        <td>
-                                                                        {{$b->id}}
+                                                                    <td>
+                                                                        {{$databarang->id}}
                                                                         </td>
                                                                         <td>
-                                                                        {{$b->nama_barang}}
+                                                                        {{$databarang->nama_barang}}
                                                                         </td>
-                                                                        <td><img src="{{ asset('assets/images/products/'.$b->barang) }}" alt="Gambar">
+                                                                        <td><img src="{{ asset('assets/images/products/'.$databarang->barang) }}" alt="Gambar">
                                                                         </td>
                                                                         <td>
-                                                                        {{$b->harga}}
+                                                                        {{$databarang->harga}}
                                                                         </td> 
                                                                         <td>
-                                                                        {{$b->keterangan}}
+                                                                        {{$databarang->keterangan}}
                                                                         </td> 
                                                                         <td class="table-action">
-                                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                                                            <a href="{{ route('tampilkandata', ['id' => $databarang->id]) }}" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
+                                                                            <a href="{{ route('deletedata', ['id' => $databarang->id]) }}" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                                                         </td>
                                                                         
                                                                     </tr>

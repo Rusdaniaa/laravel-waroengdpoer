@@ -26,15 +26,20 @@ Route::get('/', function () {
 });
 
 
-
+Route::get('/layout', [LaporanController::class, 'index']);
 Route::get('/laporan', [LaporanController::class, 'index']);
 Route::get('/dashboard', [dashboardController::class, 'index']);
 Route::get('/meja', [MejaController::class, 'index']);
 Route::get('/pelanggan', [PelangganController::class, 'index']);
-Route::get('/barang', [BarangController::class, 'index']);
-Route::get('/tambahbarang', [tambahController::class, 'toTambah']);
-Route::post('/tambahbarang/save', [tambahController::class, 'saveData']);
+Route::get('/barang', [BarangController::class, 'index'])->name('search');
+//Route::get('/search', [BarangController::class, 'search'])->name('search');
+Route::get('/create', [BarangController::class, 'create']);
+Route::post('/store', [BarangController::class, 'store']);
+Route::get('/tampilkandata/{id}', [BarangController::class, 'tampilkandata'])->name('tampilkandata');
+//Route::post('/updatedata/{id}', [BarangController::class, 'updatedata'])->name('updatedata');
+Route::match(['get', 'post'], '/updatedata/{id}', [BarangController::class, 'updatedata'])->name('updatedata');
+Route::get('/deletedata/{id}', [BarangController::class, 'deletedata'])->name('deletedata');
 Route::get('/logout', [LogoutController::class, 'index']);
 Route::get('/pembayaran', [TransaksiController::class, 'index']);
-
+Route::get('/detailbayar', [TransaksiController::class, 'detailbayar']);
 //Route::get('/logout', 'Auth\LoginController@logout')->name('logout.logout');

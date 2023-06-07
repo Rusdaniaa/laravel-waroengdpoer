@@ -2,11 +2,11 @@
 @section('title', 'Waroeng Dpoer Apps | Barang')
 @section('content')
 <main class="py-5">
-<div class="content"> 
+<div class="content">
 
                     <!-- Start Content-->
                     <div class="container-fluid">
-                        
+
                         <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
@@ -22,29 +22,29 @@
 
                                 </div>
                             </div>
-                        </div>     
-                        <!-- end page title --> 
+                        </div>
+                        <!-- end page title -->
 
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-body">
                                     @include('pembayaran._filter')
-                
+
                                         <div class="table-responsive">
                                             <div id="products-datatable_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
-                                            
+
                                                 <div class="row">
                                                     <div class="col-sm-12">
-                                                    
+
                                                         <table class="table table-centered table-borderless table-hover w-100 dt-responsive nowrap dataTable no-footer dtr-inline collapsed" id="products-datatable" role="grid" aria-describedby="products-datatable_info" style="width: 1113px;">
                                                             <thead class="table-light">
                                                             <tr>
                                                                     <th>No Transaksi</th>
                                                                     <th>Total pembayaran</th>
                                                                     <th>Status</th>
-                                                                    <th>Tanggal</th>    
-                                                                    <th>Action</th>             
+                                                                    <th>Tanggal</th>
+                                                                    <th>Action</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -56,7 +56,7 @@
                                                                         <td>
                                                                         {{$bayar->total_transaksi}}
                                                                         </td>
-                                                                        
+
                                                                         <td>
                                                                         {{$bayar->status}}
                                                                         </td>
@@ -66,11 +66,10 @@
                                                                         </td>
 
                                                                         <td class="table-action">
-                                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
+                                                                            <a href="{{url('detailbayar')}}" class="action-icon"> <i class="mdi mdi-eye"></i></a>
                                                                             <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                                                         </td>
-                                                                        
+
                                                                     </tr>
                                                                     @endforeach
                                                             </tbody>
@@ -90,7 +89,7 @@
                                                                 </nav>
                                                         </div>
                                                     </div>
-                                    
+
                         </div>
                     </div>
                                         </div>
@@ -99,7 +98,7 @@
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->
-                        
+
                     </div> <!-- container -->
 
                 </div>

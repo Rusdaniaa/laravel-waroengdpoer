@@ -11,7 +11,7 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        $transaksis = transaksi::all(); 
+        $transaksis = transaksi::all();
 
         return view('pembayaran.index', compact('transaksis'));
     }
@@ -37,6 +37,9 @@ class TransaksiController extends Controller
     public function show(string $id)
     {
         //
+    }
+    public function detailbayar(){
+        return view('pembayaran.show');
     }
 
     /**
