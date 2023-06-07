@@ -1037,6 +1037,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
+<<<<<<< HEAD
                                         <div class="row mb-2">
                                             <div class="col-sm-4">
                                                 <a href="javascript:void(0);" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add Products</a>
@@ -1049,6 +1050,9 @@
                                                 </div>
                                             </div><!-- end col-->
                                         </div>
+=======
+                                    @include('laporan._filter')
+>>>>>>> c781ff0269bcc62cf8c572e5e5304417cce85e55
                 
                                         <div class="table-responsive">
                                             <table class="table table-centered w-100 dt-responsive nowrap" id="products-datatable">
@@ -1323,6 +1327,7 @@
                                                         </td>
                                                     </tr>
 
+<<<<<<< HEAD
                                                     <tr>
                                                         <td>
                                                             <div class="form-check">
@@ -1577,6 +1582,38 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
+=======
+                                                                        
+
+                                                                        <td class="table-action">
+                                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
+                                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
+                                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                                                        </td>
+                                                                        
+                                                                    </tr>
+                                                                    @endforeach
+                                                            </tbody>
+                                                            </table>
+                                                            <nav class="mt-4">
+                                                                <ul class="pagination justify-content-center">
+                                                                    <li class="page-item disabled">
+                                                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                                                    </li>
+                                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                                    <li class="page-item">
+                                                                    <a class="page-link" href="#">Next</a>
+                                                                    </li>
+                                                                </ul>
+                                                                </nav>
+                                                        </div>
+                                                    </div>
+                                    
+                        </div>
+                    </div>
+>>>>>>> c781ff0269bcc62cf8c572e5e5304417cce85e55
                                         </div>
                                     </div> <!-- end card-body-->
                                 </div> <!-- end card-->
