@@ -18,7 +18,7 @@
                                              <li class="breadcrumb-item active">Cetak</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Pembayaran</h4>
+                                    <h4 class="page-title">Meja</h4>
 
                                 </div>
                             </div>
@@ -29,7 +29,7 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-body">
-                                    @include('laporan._filter')
+                                    @include('meja._filter')
 
                                         <div class="table-responsive">
                                             <div id="products-datatable_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
@@ -46,10 +46,10 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                @foreach($meja as $meja)
+                                                                @foreach($mejas as $meja)
                                                                     <tr>
                                                                         <td>
-                                                                            {{$table->no_meja}}
+                                                                            {{$meja->nomor_meja}}
                                                                         </td>
 
 

@@ -12,9 +12,9 @@ class MejaController extends Controller
      */
     public function index()
     {
-        $meja = meja::all();
+        $mejas = meja::all();
 
-        return view('meja.index', compact('meja'));
+        return view('meja.index', compact('mejas'));
     }
 
     /**
