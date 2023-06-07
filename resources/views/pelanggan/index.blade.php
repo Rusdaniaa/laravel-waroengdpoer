@@ -18,7 +18,7 @@
                                              <li class="breadcrumb-item active">Cetak</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Pembayaran</h4>
+                                    <h4 class="page-title">Pelanggan</h4>
 
                                 </div>
                             </div>
@@ -29,7 +29,7 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-body">
-                                    @include('laporan._filter')
+                                    @include('pelanggan._filter')
                 
                                         <div class="table-responsive">
                                             <div id="products-datatable_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
@@ -40,35 +40,37 @@
                                                         <table class="table table-centered table-borderless table-hover w-100 dt-responsive nowrap dataTable no-footer dtr-inline collapsed" id="products-datatable" role="grid" aria-describedby="products-datatable_info" style="width: 1113px;">
                                                             <thead class="table-light">
                                                             <tr>
-                                                                    <th>No</th>
-                                                                    <th>Tanggal</th>
-                                                                    <th>Pemasukan</th>            
+                                                                    <th>id</th>
+                                                                    <th>name</th>
+                                                                    <th>email</th>
+                                                                    <th>password</th>            
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            
+                                                            @foreach($pelanggans  as $users)
                                                                     <tr>
                                                                         <td>
-                                                                        
+                                                                        {{$users->id}}
                                                                         </td>
                                                                         <td>
-                                                                        
+                                                                        {{$users->name}}
                                                                         </td>
                                                                         
                                                                         <td>
-                                                                        
+                                                                        {{$users->email}}
                                                                         </td>
 
-                                                                        
+                                                                        <td>
+                                                                        {{$users->password}}
+                                                                        </td>
 
                                                                         <td class="table-action">
-                                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
+                                                                            <a href="" class="action-icon"> <i class="mdi mdi-eye"></i></a>
                                                                             <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                                                         </td>
-                                                                        
+
                                                                     </tr>
-                                                                    
+                                                                    @endforeach
                                                             </tbody>
                                                             </table>
                                                             <nav class="mt-4">

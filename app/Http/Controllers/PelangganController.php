@@ -12,8 +12,11 @@ class PelangganController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        $pelanggans = pelanggan::all();
+        
+        return view('pelanggan.index', compact('pelanggans'));
     }
+
 
     /**
      * Show the form for creating a new resource.

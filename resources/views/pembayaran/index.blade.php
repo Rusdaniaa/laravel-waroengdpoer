@@ -56,7 +56,7 @@
                                                                         <td>
                                                                         {{$bayar->total_transaksi}}
                                                                         </td>
-
+                                                                        
                                                                         <td>
                                                                         {{$bayar->status}}
                                                                         </td>
