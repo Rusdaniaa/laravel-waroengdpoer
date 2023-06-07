@@ -2,26 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\pelanggan;
 use Illuminate\Http\Request;
-use App\Models\transaksi;
-class TransaksiController extends Controller
+
+class PelangganController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $transaksis = transaksi::all();
-
-        return view('pembayaran.index', compact('transaksis'));
+        $pelanggans = pelanggan::all();
+        
+        return view('pelanggan.index', compact('pelanggans'));
     }
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-            }
+        //
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -34,18 +37,15 @@ class TransaksiController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(pelanggan $pelanggan)
     {
         //
-    }
-    public function detailbayar(){
-        return view('pembayaran.show');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(pelanggan $pelanggan)
     {
         //
     }
@@ -53,7 +53,7 @@ class TransaksiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, pelanggan $pelanggan)
     {
         //
     }
@@ -61,7 +61,7 @@ class TransaksiController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(pelanggan $pelanggan)
     {
         //
     }

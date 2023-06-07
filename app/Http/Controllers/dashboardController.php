@@ -3,17 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\transaksi;
-class TransaksiController extends Controller
+
+class dashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $transaksis = transaksi::all();
-
-        return view('pembayaran.index', compact('transaksis'));
+        return view('dashboard.index');
     }
 
     /**
@@ -21,7 +19,8 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-            }
+        //
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -37,9 +36,6 @@ class TransaksiController extends Controller
     public function show(string $id)
     {
         //
-    }
-    public function detailbayar(){
-        return view('pembayaran.show');
     }
 
     /**
