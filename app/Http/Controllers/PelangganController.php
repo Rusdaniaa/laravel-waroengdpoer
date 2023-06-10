@@ -10,11 +10,17 @@ class PelangganController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $pelanggans = pelanggan::all();
-        
-        return view('pelanggan.index', compact('pelanggans'));
+        if($request->has('search')){
+            $pelanggans = pelanggan::where('name','LIKE','%' .$request->search.'%')->paginate(5);
+        }else{
+            $pelanggans = pelanggan::paginate(5);
+        }
+
+        return view('pelanggan.index')->with([
+            'pelanggans' => $pelanggans]);
+
     }
 
 

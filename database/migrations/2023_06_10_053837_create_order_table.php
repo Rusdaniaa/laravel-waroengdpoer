@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mejas', function (Blueprint $table) {
+        Schema::create('order', function (Blueprint $table) {
             $table->id();
-            $table->integer('nomor_meja')->unique();
-            $table->enum('status', ['tersedia', 'tidak tersedia'])->default('tersedia');
+            $table->unsignedBigInteger('id_barang');
+            $table->foreign('id_barang')->references('id')->on('barangs');
+            $table->Integer('jumlah');
+            $table->Integer('total_harga');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mejas');
+        Schema::dropIfExists('order');
     }
 };

@@ -36,36 +36,46 @@
 
                                                 <div class="row">
                                                     <div class="col-sm-12">
+                                                        @if ($message = Session::get('success'))
+                                                            <div class="alert alert-success">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @endif
 
                                                         <table class="table table-centered table-borderless table-hover w-100 dt-responsive nowrap dataTable no-footer dtr-inline collapsed" id="products-datatable" role="grid" aria-describedby="products-datatable_info" style="width: 1113px;">
                                                             <thead class="table-light">
-                                                            <tr>
-                                                                    <th>No Meja</th>
+                                                                <tr>
+                                                                    <th>Nomor Meja</th>
                                                                     <th>Status</th>
-
+                                                                    <th>Aksi</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                @foreach($mejas as $meja)
+                                                                @foreach ($mejas as $m)
                                                                     <tr>
+                                                                        <td>{{ $m->nomor_meja }}</td>
                                                                         <td>
-                                                                            {{$meja->nomor_meja}}
+                                                                            @if ($m->status == 'tersedia')
+                                                                                <span class="badge badge-success-lighten">Tersedia</span>
+                                                                            @else
+                                                                                <span class="badge badge-danger-lighten">Tidak Tersedia</span>
+                                                                            @endif
                                                                         </td>
+                                                                        <td>
+                                                                            <form action="{{ url('/meja/update/' . $m->id) }}" method="POST">
+                                                                                @csrf
+                                                                                @method('PUT')
 
-
-
-
-
-
-                                                                        <td class="table-action">
-                                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                                                                <button type="submit" class="btn btn-success" name="status" value="tidak tersedia">
+                                                                                    <i class="fas fa-check"></i>
+                                                                                </button>
+                                                                                <button type="submit" class="btn btn-danger" name="status" value="tersedia">
+                                                                                    <i class="fas fa-times"></i>
+                                                                                </button>
+                                                                            </form>
                                                                         </td>
-
                                                                     </tr>
-                                                                    @endforeach
-
+                                                                @endforeach
                                                             </tbody>
                                                             </table>
                                                             <nav class="mt-4">
@@ -84,8 +94,8 @@
                                                         </div>
                                                     </div>
 
-                        </div>
-                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div> <!-- end card-body-->
                                 </div> <!-- end card-->

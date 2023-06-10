@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateDetailTransaksisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ return new class extends Migration
     {
         Schema::create('detailtransaksis', function (Blueprint $table) {
             $table->id();
-
             $table->unsignedBigInteger('id_transaksi');
             $table->foreign('id_transaksi')->references('no_transaksi')->on('transaksis');
             $table->unsignedBigInteger('id_barang');
             $table->foreign('id_barang')->references('id')->on('barangs');
-            $table->Integer('jumlah');
-            $table->Integer('total_harga');
+            $table->integer('jumlah');
+            $table->integer('total_harga');
             $table->timestamps();
         });
     }
@@ -31,4 +30,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('detailtransaksis');
     }
-};
+}

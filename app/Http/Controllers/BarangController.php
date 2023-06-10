@@ -14,10 +14,9 @@ class BarangController extends Controller
         }else{
             $data = Barang::paginate(5);
         }
-        
 
         return view('barang.index')->with([
-            'data' => $data]);        
+            'data' => $data]);
     }
     public function create()
     {
@@ -62,9 +61,9 @@ class BarangController extends Controller
      */
     public function tampilkandata(string $id)
     {
-        $data = Barang::find($id); 
+        $data = Barang::find($id);
         return view('barang.show',compact('data'));
-        
+
     }
 
     /**
@@ -80,21 +79,21 @@ class BarangController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
+
     }
     public function updatedata(Request $request, $id)
     {
         $data = Barang::find($id);
         $data->update($request->all());
         return redirect('barang')->with('success', 'Data Barang Berhasil Diupdate!');
-        
+
     }
     public function deletedata(Request $request, $id)
     {
         $data = Barang::find($id);
         $data->delete();
         return redirect('barang')->with('success', 'Data Barang Berhasil Dihapus!');
-        
+
     }
 
     /**

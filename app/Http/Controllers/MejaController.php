@@ -10,11 +10,18 @@ class MejaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $mejas = meja::all();
 
-        return view('meja.index', compact('mejas'));
+        if($request->has('search')){
+            $mejas = meja::where('nomor_meja','LIKE','%' .$request->search.'%')->paginate(5);
+        }else{
+            $mejas = meja::paginate(5);
+        }
+
+
+        return view('meja.index')->with([
+            'mejas' => $mejas]);
     }
 
     /**
@@ -22,7 +29,16 @@ class MejaController extends Controller
      */
     public function create()
     {
-        //
+
+    }
+    public function tambahdata()
+    {
+        $statusOptions = [
+            ['value' => '1', 'label' => 'Tersedia'],
+            ['value' => '2', 'label' => 'Tidak Tersedia'],
+        ];
+
+        return view('meja.createdata', compact('statusOptions'));
     }
 
     /**
@@ -30,7 +46,17 @@ class MejaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nomor_meja' => 'required',
+            'status' => 'required|in:1,2',
+        ]);
+
+        meja::create([
+            'nomor_meja' => $request->nomor_meja,
+            'status' => $request->status,
+        ]);
+
+        return redirect()->route('meja.index')->with('success', 'Meja berhasil ditambahkan.');
     }
 
     /**
@@ -52,9 +78,13 @@ class MejaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, meja $meja)
+    public function update(Request $request, meja $mejas)
     {
-        //
+        $status = $request->status == 'tersedia' ? 'tidak tersedia' : 'tersedia';
+        $mejas->update(['status' => $status]);
+
+        return redirect()->route('meja.index')
+            ->with('success', 'Status meja berhasil diperbarui.');
     }
 
     /**

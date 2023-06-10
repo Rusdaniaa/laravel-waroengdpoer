@@ -28,7 +28,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card">
+
                                     <div class="card-body">
+                                        @include('pembayaran.pos')
                                     @include('pembayaran._filter')
 
                                         <div class="table-responsive">
@@ -56,7 +58,7 @@
                                                                         <td>
                                                                         {{$bayar->total_transaksi}}
                                                                         </td>
-                                                                        
+
                                                                         <td>
                                                                         {{$bayar->status}}
                                                                         </td>

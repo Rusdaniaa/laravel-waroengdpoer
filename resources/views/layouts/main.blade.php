@@ -26,7 +26,12 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <!-- Mengimpor file CSS Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+
+<!-- Mengimpor file JavaScript Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
 
 
     </head>
@@ -36,7 +41,7 @@
         <div class="wrapper">
             <!-- ========== Left Sidebar Start ========== -->
             <div class="leftside-menu">
-    
+
                 <!-- LOGO -->
                 <a href="{{ url('layout') }}" class="logo text-center logo-light">
                     <span class="logo-lg">
@@ -56,7 +61,7 @@
                         <img src="{{url('assets/images/logo_sm_dark.png')}}" alt="" height="16">
                     </span>
                 </a>
-    
+
                 <div class="h-100" id="leftside-menu-container" data-simplebar="">
 
                     <!--- Sidemenu -->
@@ -97,10 +102,10 @@
                                 <i class="dripicons-user-group"></i>
                                 <span> Customer </span>
                             </a>
-                        </li>                         
+                        </li>
 
                         <li class="side-nav-item">
-              
+
                             <a href="{{ url('laporan') }}" class="side-nav-link">
                                 <i class="uil-clipboard-alt"></i>
                                 <span> Laporan </span>
@@ -112,16 +117,16 @@
                                 <span> Pengaturan </span>
                             </a>
                         </li>
-                             
+
                         <li class="side-nav-item">
                             <a href="{{ url('logout') }}" class="side-nav-link">
                                 <i class="mdi mdi-logout-variant"></i>
                                 <span> Logout </span>
                             </a>
-                        </li>    
+                        </li>
                     </ul>
 
-                    
+
                     <!-- End Sidebar -->
 
                     <div class="clearfix"></div>
@@ -151,7 +156,7 @@
                                     </form>
                                 </div>
                             </li>
-                            
+
 
 
                             <li class="notification-list">
@@ -162,7 +167,7 @@
 
                             <li class="dropdown notification-list">
                                 <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                    <span class="account-user-avatar"> 
+                                    <span class="account-user-avatar">
                                         <img src="{{url('assets/images/users/avatar-1.png')}}" alt="user-image" class="rounded-circle">
                                     </span>
                                     <span>
@@ -254,7 +259,7 @@
         </div>
         <!-- END wrapper -->
 
-        
+
 
         <div class="rightbar-overlay"></div>
         <!-- /End-bar -->
@@ -262,17 +267,17 @@
         <!-- bundle -->
         <script src="{{url('assets/js/vendor.min.js')}}"></script>
         <script src="{{url('assets/js/app.min.js')}}"></script>
-        
-        
+
+
         <!-- third party js -->
         <script src="{{url('assets/js/vendor/apexcharts.min.js')}}"></script>
         <script src="{{url('assets/js/vendor/jquery-jvectormap-1.2.2.min.js')}}"></script>
         <script src="{{url('assets/js/vendor/jquery-jvectormap-world-mill-en.js')}}"></script>
         <!-- third party js ends -->
-        
+
         <!-- demo app -->
         <script src="{{url('assets/js/pages/demo.dashboard.js')}}"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
         <!-- end demo js-->
     </body>
 </html>
