@@ -13,6 +13,9 @@ class Barang extends Model
     protected $fillable = [
         'nama_barang', 'harga', 'barang', 'keterangan'
     ];
+    protected $guarded = [];
+
+    protected $dates = ['deleted_at'];
 
     protected $hidden;
 
@@ -20,6 +23,6 @@ class Barang extends Model
     public function getGambarUrlAttribute()
     {
         return asset('images\products' . $this->barang);
-        
+
     }
 }

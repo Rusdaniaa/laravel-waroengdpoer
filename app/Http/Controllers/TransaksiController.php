@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\transaksi;
 use App\Models\Barang;
+use App\Models\TransaksiDetail;
 class TransaksiController extends Controller
 {
     /**
@@ -23,8 +24,9 @@ class TransaksiController extends Controller
     public function create()
     {
 
+        $barangs = Barang::pluck('nama_barang', 'id');
+        return view('pembayaran.pos', compact('barangs'));
     // Show the form for creating a new transaction
-    return view('pembayaran.create');
 
     }
 
@@ -33,32 +35,29 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'tgl_transaksi' => 'required',
-            'kode_barang' => 'required',
-            'nama_barang' => 'required',
-            'harga' => 'required',
-            'quantity' => 'required',
-            'subtotal' => 'required',
-            'bayar' => 'required',
-        ]);
-        // Create a new transaction
+        // Simpan data transaksi
         $transaksi = new Transaksi;
-        $transaksi->tgl_transaksi = $request->input('tgl_transaksi');
+        $transaksi->tgl_transaksi = $request->tgl_transaksi;
+        $transaksi->bayar = $request->bayar;
+        $transaksi->kembalian = $request->kembalian;
         $transaksi->save();
 
-        // Create a new detail transaksi
+
+
+        // Simpan data detail transaksi
         $detailTransaksi = new DetailTransaksi;
-        $detailTransaksi->id_transaksi = $transaksi->id;
-        $detailTransaksi->id_barang = $request->input('kode_barang');
-        $detailTransaksi->jumlah = $request->input('quantity');
-        $detailTransaksi->total_harga = $request->input('subtotal');
+        $detailTransaksi->transaksi_id = $transaksi->id;
+        $detailTransaksi->kode_barang = $request->id;
+        $detailTransaksi->nama_barang = $request->nama_barang;
+        $detailTransaksi->harga = $request->harga;
+        $detailTransaksi->quantity = $request->quantity;
+        $detailTransaksi->subtotal = $request->subtotal;
         $detailTransaksi->save();
 
         // Store other fields in the database as needed
 
         // Redirect or return a response
-        return redirect()->route('transaksi.index')->with('success', 'Transaction created successfully.');
+        return redirect()->route('pembayaran.index')->with('success', 'Transaction created successfully.');
     }
 
     /**
@@ -68,9 +67,7 @@ class TransaksiController extends Controller
     {
         //
     }
-    public function detailbayar(){
-        return view('pembayaran.show');
-    }
+
 
     /**
      * Show the form for editing the specified resource.

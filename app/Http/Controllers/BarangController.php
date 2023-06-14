@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Barang;
+use App\Models\Kategori;
 use Illuminate\Support\Facades\Validator;
 
 class BarangController extends Controller
@@ -18,9 +19,16 @@ class BarangController extends Controller
         return view('barang.index')->with([
             'data' => $data]);
     }
+
+
+
     public function create()
     {
-        return view('tambah.tambah');
+
+
+        $kategori = Kategori::all();
+
+        return view('tambah.tambah', compact('kategori'));
     }
 
     /**

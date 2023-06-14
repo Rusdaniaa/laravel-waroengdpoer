@@ -20,36 +20,39 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="kode_barang">Product Code:</label>
-                            <input type="text" class="form-control" id="kode_barang" name="kode_barang" required>
+                            <label for="id">Product Code:</label>
+                            <select class="form-control" id="kode_barang" name="id" required>
+
+                            </select>
                         </div>
 
                         <div class="form-group">
                             <label for="nama_barang">Product Name:</label>
-                            <input type="text" class="form-control" id="nama_barang" name="nama_barang" required>
+                            <select class="form-control" id="nama_barang" name="nama_barang" required>
+
+                            </select>
                         </div>
 
                         <div class="form-group">
                             <label for="harga">Price:</label>
-                            <input type="text" class="form-control" id="harga" name="harga" required>
+                            <input type="number" class="form-control" id="harga" name="harga" required>
                         </div>
 
                         <div class="form-group">
                             <label for="quantity">Quantity:</label>
-                            <input type="text" class="form-control" id="quantity" name="quantity" required>
+                            <input type="number" class="form-control" id="quantity" name="quantity" required>
                         </div>
 
                         <div class="form-group">
                             <label for="subtotal">Subtotal:</label>
-                            <input type="text" class="form-control" id="subtotal" name="subtotal" required>
+                            <input type="number" class="form-control" id="subtotal" name="subtotal" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="bayar">Payment:</label>
-                            <input type="text" class="form-control" id="bayar" name="bayar" required>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Submit</button>
+
                     </form>
                 </div>
             </div>
@@ -57,9 +60,9 @@
         <div class="col-md-6">
             <div class="card" id="print">
               <div class="card-header bg-white border-0 pb-0 pt-4">
-                <h5 class="card-tittle mb-0 text-center"><b>[Nama Toko]</b></h5>
-                <p class="m-0 small text-center">[Alamat]</p>
-                <p class="small text-center">Telp. [Nomor Telepon]</p>
+                <h5 class="card-tittle mb-0 text-center"><b>Waroeng D'Poer</b></h5>
+                <p class="m-0 small text-center">Umbulsari</p>
+                <p class="small text-center">Telp. 082310774468</p>
                 <div class="row">
                   <div class="col-8 col-sm-9 pr-0">
                     <ul class="pl-0 small" style="list-style: none;text-transform: uppercase;">

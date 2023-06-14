@@ -13,13 +13,16 @@ class CreateDetailTransaksisTable extends Migration
     {
         Schema::create('detailtransaksis', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_transaksi');
-            $table->foreign('id_transaksi')->references('no_transaksi')->on('transaksis');
-            $table->unsignedBigInteger('id_barang');
-            $table->foreign('id_barang')->references('id')->on('barangs');
-            $table->integer('jumlah');
-            $table->integer('total_harga');
+            $table->unsignedBigInteger('transaksi_id');
+            $table->unsignedBigInteger('barang_id');
+            $table->string('nama_barang');
+            $table->decimal('harga', 8, 2);
+            $table->integer('quantity');
+            $table->decimal('subtotal', 8, 2);
+            $table->softDeletes();
             $table->timestamps();
+            $table->foreign('barang_id')->references('id')->on('barangs')->onDelete('cascade');
+            $table->foreign('transaksi_id')->references('id')->on('transaksis')->onDelete('cascade');
         });
     }
 

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\pelanggan;
+use App\Models\transaksi;
 class dashboardController extends Controller
 {
     /**
@@ -12,6 +13,29 @@ class dashboardController extends Controller
     public function index()
     {
         return view('dashboard.index');
+    }
+
+    public function pelanggan()
+    {
+        $jumlahPelanggan = pelanggan::count();
+
+        return response()->json(['jumlahPelanggan' => $jumlahPelanggan]);
+
+    }
+
+    public function order()
+    {
+        $jumlahorder = transaksi::count();
+
+        return response()->json(['jumlahorder' => $jumlahorder]);
+
+    }
+
+    public function pendapatan()
+    {
+        $jumlahpendapatan = transaksi::sum('total_transaksi');
+
+        return response()->json(['jumlahpendapatan' => $jumlahpendapatan]);
     }
 
     /**

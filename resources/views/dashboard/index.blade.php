@@ -2,11 +2,13 @@
 @section('title', 'Waroeng Dpoer Apps | Barang')
 @section('content')
 <main class="py-5">
-<div class="content"> 
+<div class="content">
+    <!-- Start Content-->
+    <div class="container-fluid">
 
         <div class="row">
             <!-- start page title -->
-    
+
                             <div class="col-12">
                                 <div class="page-title-box">
                                     <div class="page-title-right">
@@ -33,13 +35,13 @@
                         <div class="row">
                             <div class="col-lg-6 col-xl-3">
                                 <div class="card">
-                                    <div class="card-body">
+                                    <div class="card-boady">
                                         <div class="row align-items-center">
                                             <div class="col-6">
                                                 <h5 class="text-muted fw-normal mt-0 text-truncate" title="Campaign Sent">Customer</h5>
-                                                <h3 class="my-2 py-1">9,184</h3>
+                                                <h3 class="my-2 py-1" id="jumlahPelanggan" name="jumlahPelanggan"></h3>
                                                 <p class="mb-0 text-muted">
-                                                <span class="text-nowrap">Since last month</span> 
+                                                    <span class="text-nowrap">Since last month</span>
                                                 </p>
                                             </div>
                                             <div class="col-6">
@@ -51,16 +53,16 @@
                                     </div> <!-- end card-body -->
                                 </div> <!-- end card -->
                             </div> <!-- end col -->
-        
+
                             <div class="col-lg-6 col-xl-3">
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row align-items-center">
                                             <div class="col-6">
                                                 <h5 class="text-muted fw-normal mt-0 text-truncate" title="New Leads">Orders</h5>
-                                                <h3 class="my-2 py-1">3,254</h3>
+                                                <h3 class="my-2 py-1" id="jumlahorder" name="jumlahorder"></h3>
                                                 <p class="mb-0 text-muted">
-                                                <span class="text-nowrap">Since last month</span> 
+                                                <span class="text-nowrap">Since last month</span>
                                                 </p>
                                             </div>
                                             <div class="col-6">
@@ -78,10 +80,10 @@
                                     <div class="card-body">
                                         <div class="row align-items-center">
                                             <div class="col-6">
-                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="Deals">Pendapatan</h5>
-                                                <h3 class="my-2 py-1">861</h3>
+                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="Jumlah Pendapatan">Jumlah Pendapatan</h5>
+                                                <h3 class="my-2 py-1" id="jumlahpendapatan" name="jumlahorder"></h3>
                                                 <p class="mb-0 text-muted">
-                                                <span class="text-nowrap">Since last month</span> 
+                                                    <span class="text-nowrap">Since last month</span>
                                                 </p>
                                             </div>
                                             <div class="col-6">
@@ -100,9 +102,9 @@
                                         <div class="row align-items-center">
                                             <div class="col-6">
                                                 <h5 class="text-muted fw-normal mt-0 text-truncate" title="Booked Revenue">Menu terjual</h5>
-                                                <h3 class="my-2 py-1">$253k</h3>
+                                                <h3 class="my-2 py-1" id="menuterjual" name="menu terjual"></h3>
                                                 <p class="mb-0 text-muted">
-                                                <span class="text-nowrap">Since last month</span> 
+                                                <span class="text-nowrap">Since last month</span>
                                                 </p>
                                             </div>
                                             <div class="col-6">
@@ -115,8 +117,56 @@
                                 </div> <!-- end card -->
                             </div> <!-- end col -->
                         </div>
-                        <!-- end row -->
-                                        
+
+        </div>            <!-- end row -->
+
         </div>
+
+            <!-- Include your JavaScript code -->
+        <script>
+            window.addEventListener('DOMContentLoaded', (event) => {
+                // Mengambil jumlah pelanggan melalui permintaan AJAX
+                fetch('/dashboard/jumlahpelanggan')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Menampilkan jumlah pelanggan di elemen HTML yang sesuai
+                        document.getElementById('jumlahPelanggan').innerText = data.jumlahPelanggan;
+                    })
+                    .catch(error => console.log(error));
+            });
+
+            window.addEventListener('DOMContentLoaded', (event) => {
+                // Mengambil jumlah pelanggan melalui permintaan AJAX
+                fetch('/dashboard/jumlahorder')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Menampilkan jumlah pelanggan di elemen HTML yang sesuai
+                        document.getElementById('jumlahorder').innerText = data.jumlahorder;
+                    })
+                    .catch(error => console.log(error));
+            });
+
+            window.addEventListener('DOMContentLoaded', (event) => {
+                // Mengambil jumlah pendapatan melalui permintaan AJAX
+                fetch('/dashboard/jumlahpendapatan')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Menampilkan jumlah pendapatan di elemen HTML yang sesuai
+                        document.getElementById('jumlahpendapatan').innerText = data.jumlahpendapatan;
+                    })
+                    .catch(error => console.log(error));
+            });
+
+            //window.addEventListener('DOMContentLoaded', (event) => {
+                // Mengambil jumlah pendapatan melalui permintaan AJAX
+                //fetch('/dashboard/jumlahmenuterjual')
+                    //.then(response => response.json())
+                    //.then(data => {
+                        // Menampilkan jumlah pendapatan di elemen HTML yang sesuai
+                      //  document.getElementById('jumlahmenuterjual').innerText = data.jumlahmenuterjual;
+                    //})
+                   // .catch(error => console.log(error));
+           /// });
+        </script>
 </main>
 @endsection

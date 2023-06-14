@@ -4,19 +4,20 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateTransaksisTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('meja', function (Blueprint $table) {
-
+        Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
-            $table->string('nomor_meja');
-            $table->string('status');
+            $table->date('tgl_transaksi');
+            $table->decimal('bayar', 8, 2);
+            $table->decimal('kembalian', 8, 2);
             $table->timestamps();
+
         });
     }
 
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('meja');
+        Schema::dropIfExists('transaksis');
     }
-};
+}
