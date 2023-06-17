@@ -9,4 +9,5 @@ class TransaksiDetail extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    protected $table = 'detailtransaksis';
 }

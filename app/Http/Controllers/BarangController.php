@@ -111,4 +111,10 @@ class BarangController extends Controller
     {
         //
     }
+
+
+    public function api_getBarang() {
+        $barang = Barang::all();
+        return response()->json(array('data'=>$barang));
+    }
 }

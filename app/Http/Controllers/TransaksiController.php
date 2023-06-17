@@ -45,7 +45,7 @@ class TransaksiController extends Controller
 
 
         // Simpan data detail transaksi
-        $detailTransaksi = new DetailTransaksi;
+        $detailTransaksi = new TransaksiDetail;
         $detailTransaksi->transaksi_id = $transaksi->id;
         $detailTransaksi->kode_barang = $request->id;
         $detailTransaksi->nama_barang = $request->nama_barang;

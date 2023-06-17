@@ -14,6 +14,8 @@ class CreateTransaksisTable extends Migration
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
             $table->date('tgl_transaksi');
+            $table->string('nama_pemesan',100);
+            $table->enum('order',['true','false'])->default('false')->comment('Kolom ini untuk mengecek apakah transaksi sudah fix');
             $table->decimal('bayar', 8, 2);
             $table->decimal('kembalian', 8, 2);
             $table->timestamps();

@@ -17,7 +17,7 @@ class Barang extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $hidden;
+    //protected $hidden;
 
     // Metode akses untuk mendapatkan URL gambar
     public function getGambarUrlAttribute()
