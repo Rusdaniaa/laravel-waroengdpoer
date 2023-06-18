@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\Api\ApiTransaksiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BarangController;
+use App\Http\Middleware\AuthCheck;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('barang',[BarangController::class, 'api_getBarang']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('barang',[BarangController::class, 'api_getBarang']);
 
 Route::group(['prefix'=>'auth',],function(){
     Route::post('login',[AuthController::class,'login']);
