@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\pelanggan;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PelangganController extends Controller
@@ -12,15 +13,10 @@ class PelangganController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->has('search')){
-            $pelanggans = pelanggan::where('name','LIKE','%' .$request->search.'%')->paginate(5);
-        }else{
-            $pelanggans = pelanggan::paginate(5);
-        }
 
-        return view('pelanggan.index')->with([
-            'pelanggans' => $pelanggans]);
+        $customer = User::where('role','=','Customer')->get();
 
+          return view('pelanggan.index',compact('customer'));
     }
 
 

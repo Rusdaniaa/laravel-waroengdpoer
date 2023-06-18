@@ -24,10 +24,7 @@ class BarangController extends Controller
 
     public function create()
     {
-
-
         $kategori = Kategori::all();
-
         return view('tambah.tambah', compact('kategori'));
     }
 
@@ -36,11 +33,10 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
-
-
            //define validation rules
         $validator = Validator::make($request->all(), [
             'nama_barang' => 'required|string',
+            'id_kategori'=>'required',
             'harga' => 'required|integer',
             'keterangan' => 'required|string',
             'barang' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -49,9 +45,10 @@ class BarangController extends Controller
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
-         //upload image
-         $image = $request->file('barang');
-         $image->storeAs('assets/images/products', $image->hashName());
+        //upload image
+        $image = $request->file('barang');
+        $image->storeAs('public', $image->hashName());
+        // dd($request);
 
          //create post
         $post =Barang::create([
@@ -61,8 +58,8 @@ class BarangController extends Controller
             'keterangan'   => $request->keterangan,
         ]);
         //return response
-        return redirect('barang')->with('success', 'Data Barang Berhasil Ditambahkan!');
-    }
+        return redirect()->route('data_menu')->with('success', 'Data Barang Berhasil Ditambahkan!');
+   }
 
     /**
      * Display the specified resource.
@@ -93,15 +90,13 @@ class BarangController extends Controller
     {
         $data = Barang::find($id);
         $data->update($request->all());
-        return redirect('barang')->with('success', 'Data Barang Berhasil Diupdate!');
-
+        return redirect()->route('data_menu')->with('success', 'Data Barang Berhasil Diupdate!');
     }
     public function deletedata(Request $request, $id)
     {
         $data = Barang::find($id);
         $data->delete();
-        return redirect('barang')->with('success', 'Data Barang Berhasil Dihapus!');
-
+        return redirect()->route('data_menu')->with('success', 'Data Barang Berhasil Dihapus!');
     }
 
     /**

@@ -1,13 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BarangController;
 use App\Http\Controllers\tambahController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\MejaController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\TransaksiController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,9 +28,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/layout', [LaporanController::class, 'index']);
+
 Route::get('/laporan', [LaporanController::class, 'index']);
-Route::get('/dashboard', [dashboardController::class, 'index'])->name('search');
+Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
 Route::get('/dashboard/jumlahpelanggan', [dashboardController::class, 'pelanggan'])->name('jumlahPelanggan');
 Route::get('/dashboard/jumlahorder', [dashboardController::class, 'pendapatan'])->name('jumlahpendapatan');
 Route::get('/dashboard/jumlahpendapatan', [dashboardController::class, 'order'])->name('jumlahorder');
@@ -37,12 +39,11 @@ Route::match(['get', 'post', 'put'], 'meja/update/{id}', [MejaController::class,
 Route::get('/meja/tambahdata', [MejaController::class, 'tambahdata']);
 Route::post('/meja/store', [MejaController::class, 'store']);
 Route::get('/pelanggan', [PelangganController::class, 'index'])->name('search');
-Route::get('/barang', [BarangController::class, 'index'])->name('search');
-//Route::get('/search', [BarangController::class, 'search'])->name('search');
-Route::get('/create', [BarangController::class, 'create']);
-Route::post('/store', [BarangController::class, 'store']);
+Route::get('/menu', [BarangController::class, 'index'])->name('data_menu');
+Route::get('menu/create', [BarangController::class, 'create'])->name('menu_tambah_page');
+Route::get('menu/delete/{id}', [BarangController::class, 'deletedata'])->name('menu_delete');
+Route::post('menu/store', [BarangController::class, 'store'])->name('simpan_menu');
 Route::get('/tampilkandata/{id}', [BarangController::class, 'tampilkandata'])->name('tampilkandata');
-//Route::post('/updatedata/{id}', [BarangController::class, 'updatedata'])->name('updatedata');
 Route::match(['get', 'post'], '/updatedata/{id}', [BarangController::class, 'updatedata'])->name('updatedata');
 Route::get('/deletedata/{id}', [BarangController::class, 'deletedata'])->name('deletedata');
 Route::get('/logout', [LogoutController::class, 'index']);

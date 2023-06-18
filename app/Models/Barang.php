@@ -10,9 +10,6 @@ class Barang extends Model
 {
     use softDeletes;
     protected $table = 'barangs';
-    protected $fillable = [
-        'nama_barang', 'harga', 'barang', 'keterangan'
-    ];
     protected $guarded = [];
 
     protected $dates = ['deleted_at'];

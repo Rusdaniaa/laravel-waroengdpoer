@@ -1,11 +1,11 @@
 @extends('layouts.main')
 @section('title', 'Waroeng Dpoer Apps | Barang')
 @section('content')
-<main class="py-5">
-<div class="content">
+    <main class="py-5">
+        <div class="content">
 
-                    <!-- Start Content-->
-                    <div class="container-fluid">
+                <!-- Start Content-->
+                <div class="container-fluid">
 
                         <!-- start page title -->
                         <div class="row">
@@ -28,36 +28,33 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-body">
-                                    @include('pelanggan._filter')
+                                    {{--@include('pelanggan._filter')--}}
 
                                         <div class="table-responsive">
-                                            <div id="products-datatable_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
-
                                                 <div class="row">
-                                                    <div class="col-sm-12">
-
+                                                    <div class="col-md-12">
                                                         <table class="table table-centered table-borderless table-hover w-100 dt-responsive nowrap dataTable no-footer dtr-inline collapsed" id="products-datatable" role="grid" aria-describedby="products-datatable_info" style="width: 1113px;">
                                                             <thead class="table-light">
-                                                            <tr>
-                                                                    <th>id</th>
-                                                                    <th>name</th>
-                                                                    <th>email</th>
+                                                                <tr>
+                                                                    <th>ID</th>
+                                                                    <th>Nama</th>
+                                                                    <th>Email</th>
 
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            @foreach($pelanggans  as $users)
-                                                                    <tr>
-                                                                        <td>
-                                                                        {{$users->id}}
-                                                                        </td>
-                                                                        <td>
-                                                                        {{$users->name}}
-                                                                        </td>
+                                                            @foreach($customer as $key => $value)
+                                                                <tr>
+                                                                    <td>
+                                                                        {{ $key+1 }}
+                                                                    </td>
+                                                                    <td>
+                                                                        {{ $value->name }}
+                                                                    </td>
 
-                                                                        <td>
-                                                                        {{$users->email}}
-                                                                        </td>
+                                                                    <td>
+                                                                        {{$value->email}}
+                                                                    </td>
 
 
 
@@ -65,30 +62,15 @@
                                                                     @endforeach
                                                             </tbody>
                                                             </table>
-                                                            <nav class="mt-4">
-                                                                <ul class="pagination justify-content-center">
-                                                                    <li class="page-item disabled">
-                                                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                    <a class="page-link" href="#">Next</a>
-                                                                    </li>
-                                                                </ul>
-                                                                </nav>
+
                                                         </div>
                                                     </div>
-
-                        </div>
-                    </div>
-                                        </div>
-                                    </div> <!-- end card-body-->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
-                        </div>
-                        <!-- end row -->
+                                                </div>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col -->
+                                </div>
+                                <!-- end row -->
 
                     </div> <!-- container -->
 
