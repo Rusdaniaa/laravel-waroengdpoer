@@ -36,17 +36,17 @@
                                     <h4 class="text-dark-50 text-center pb-0 fw-bold">Log In</h4>
                                 </div>
 
-                                <form action="#">
+                                <form action="{{ route('login_process') }}" method="POST">
 
                                     <div class="mb-3">
-                                        <label for="emailaddress" class="form-label">Username</label>
-                                        <input class="form-control" type="user" id="username" required="" placeholder="Enter your username">
+                                        <label for="emailaddress" class="form-label">Email</label>
+                                        <input class="form-control" type="user" id="email" name="email" required="" placeholder="Masukkan email anda">
                                     </div>
-
+                                    @csrf
                                     <div class="mb-3">
                                         <label for="password" class="form-label">Password</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="password" id="password" class="form-control" placeholder="Enter your password">
+                                            <input type="password" name="password" id="password" class="form-control" placeholder="Masukkan password anda">
                                             <div class="input-group-text" data-password="false">
                                                 <span class="password-eye"></span>
                                             </div>
