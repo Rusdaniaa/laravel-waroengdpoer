@@ -15,7 +15,7 @@ class ApiTransaksiController extends Controller
     public function index() {
         $user = Auth::user();
         $transaksi = Transaksi::where('nama_pemesan','=',$user->name)->where('order','=','false')->first();
-        $detail_transaksi = TransaksiDetail::where('transaksi_id','=',$transaksi->id)->get();
+        $detail_transaksi = TransaksiDetail::with('menu')->where('transaksi_id','=',$transaksi->id)->get();
         return response()->json(['data'=>$detail_transaksi]);
     }
     public function insert(Request $request) {
@@ -38,6 +38,8 @@ class ApiTransaksiController extends Controller
                 'subtotal'=>$request->input('quantity') * $request->input('harga'),
             );
             TransaksiDetail::create($detail_field);
+            $total = TransaksiDetail::where('transaksi_id','=',$transaksi->id)->sum('subtotal');
+            Transaksi::find($transaksi->id)->update(['total'=>$total]);
             return response()->json(['message'=>'data berhasil dimasukkan']);
         }else{
         $detail_field = array(
@@ -49,6 +51,8 @@ class ApiTransaksiController extends Controller
             'subtotal'=>$request->input('quantity') * $request->input('harga'),
         );
         TransaksiDetail::create($detail_field);
+        $total = TransaksiDetail::where('transaksi_id','=',$transaksi_check->id)->sum('subtotal');
+        Transaksi::find($transaksi_check->id)->update(['total'=>$total]);
         return response()->json(['message'=>'data berhasil dimasukkan']);
         }
     }

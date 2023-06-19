@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\pelanggan;
-use App\Models\transaksi;
+use App\Models\Transaksi;
+use App\Models\User;
 class dashboardController extends Controller
 {
     /**
@@ -17,7 +18,7 @@ class dashboardController extends Controller
 
     public function pelanggan()
     {
-        $jumlahPelanggan = pelanggan::count();
+        $jumlahPelanggan = User::where('role','=','Customer')->count();
 
         return response()->json(['jumlahPelanggan' => $jumlahPelanggan]);
 
@@ -25,7 +26,7 @@ class dashboardController extends Controller
 
     public function order()
     {
-        $jumlahorder = transaksi::count();
+        $jumlahorder = Transaksi::count();
 
         return response()->json(['jumlahorder' => $jumlahorder]);
 
@@ -33,7 +34,7 @@ class dashboardController extends Controller
 
     public function pendapatan()
     {
-        $jumlahpendapatan = transaksi::sum('total_transaksi');
+        $jumlahpendapatan = Transaksi::sum('total');
 
         return response()->json(['jumlahpendapatan' => $jumlahpendapatan]);
     }

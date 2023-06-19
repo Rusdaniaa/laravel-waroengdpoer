@@ -10,4 +10,8 @@ class TransaksiDetail extends Model
     use HasFactory;
     protected $guarded = [];
     protected $table = 'detailtransaksis';
+
+    public function menu() {
+        return $this->belongsTo(Barang::class,'barang_id');
+    }
 }

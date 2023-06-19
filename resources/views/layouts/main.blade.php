@@ -59,6 +59,12 @@
                     </li>
 
                     <li class="side-nav-title side-nav-item">Apps</li>
+                    <li class="side-nav-item">
+                        <a href="{{ route('data_menu') }}" class="side-nav-link">
+                            <i class="dripicons-shopping-bag"></i>
+                            <span> Menu </span>
+                        </a>
+                    </li>
 
                     <li class="side-nav-item">
                         <a href="{{ url('pembayaran') }}" class="side-nav-link">
@@ -114,7 +120,7 @@
                 <!-- Topbar Start -->
                 <div class="navbar-custom">
                     <ul class="list-unstyled topbar-menu float-end mb-0">
-                       
+
 
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown"
@@ -172,7 +178,7 @@
                         <i class="mdi mdi-menu"></i>
                     </button>
                     <div class="app-search dropdown d-none d-lg-block">
-                   
+
                 </div>
                 <!-- end Topbar -->
                 @yield('content')

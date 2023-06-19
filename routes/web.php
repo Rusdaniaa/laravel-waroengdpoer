@@ -56,9 +56,10 @@ Route::match(['get', 'post'], '/updatedata/{id}', [BarangController::class, 'upd
 Route::get('/deletedata/{id}', [BarangController::class, 'deletedata'])->name('deletedata');
 Route::get('/logout', [LogoutController::class, 'index']);
 
-Route::get('/pembayaran', [TransaksiController::class, 'index']);
+Route::get('/pembayaran', [TransaksiController::class, 'index'])->name('page_pembayaran');
 Route::get('/pembayaran/pos', [TransaksiController::class, 'create'])->name('transaksi.create');
 Route::post('/pembayaran/store', [TransaksiController::class, 'store'])->name('transaksi.store');
+
 Route::get('/pembayaran/detail/{id}', [TransaksiController::class, 'bayar'])->name('transaksi.bayar');
 Route::post('/pembayaran/bayar/{id}', [TransaksiController::class, 'proses_bayar'])->name('transaksi.prosesbayar');
 

@@ -10,13 +10,6 @@
                     <input type="text" name="nama_barang" class="form-control" value = "{{$data->nama_barang}}">
                 </div>
 
-                <div class="mb-3">
-                    <label for="harga" class="form-label">Id Kategori</label>
-                    <div class="mb-3">
-                        <label for="example-select" class="form-label">Input Select</label>
-                        <select class="form-select" id="example-select"></select>
-                    </div>
-                </div>
 
                 <div class="mb-3">
                     <label for="harga" class="form-label">Harga Barang</label>
@@ -31,7 +24,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="barang" class="form-label">Default file input</label>
+                    <label for="barang" class="form-label">Foto</label>
                     <input type="file" name="barang" class="form-control" >
                 </div>
 

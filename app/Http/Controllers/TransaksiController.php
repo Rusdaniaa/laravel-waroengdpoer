@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Exports\TransaksiExport;
 use Illuminate\Http\Request;
-use App\Models\transaksi;
+use App\Models\Transaksi;
 use App\Models\Barang;
 use App\Models\TransaksiDetail;
+use Carbon\Carbon;
+use Maatwebsite\Excel\Facades\Excel;
 class TransaksiController extends Controller
 {
     /**
@@ -13,7 +15,7 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        $transaksis = transaksi::all();
+        $transaksis = Transaksi::all();
 
         return view('pembayaran.index', compact('transaksis'));
     }
@@ -91,5 +93,30 @@ class TransaksiController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+    public function bayar($id)
+    {
+        $transaksi = Transaksi::find($id);
+        $detailTransaksi = TransaksiDetail::with('menu')->where('transaksi_id', '=', $id)->get();
+        return view('pembayaran.bayar', compact('transaksi', 'detailTransaksi'));
+    }
+
+    public function proses_bayar(Request $request, $id)
+    {
+        $transaksi = Transaksi::find($id);
+        $transaksi->bayar = $request->input('bayar');
+        $transaksi->kembalian = $request->input('bayar') - $request->input('total');
+        $transaksi->update();
+        return redirect()->route('page_pembayaran');
+    }
+
+    public function export(Request $request)
+    {
+        if ($request->has('tanggal_awal') && $request->has('tanggal_awal')) {
+            $tanggal_awal =$request->input('tanggal_awal');
+            $tanggal_akhir =$request->input('tanggal_akhir');
+        }
+        // dd($tanggal_akhir, $tanggal_awal);
+        return Excel::download(new TransaksiExport($tanggal_awal, $tanggal_akhir), 'DataTransaksi.xlsx');
     }
 }

@@ -89,7 +89,18 @@ class BarangController extends Controller
     public function updatedata(Request $request, $id)
     {
         $data = Barang::find($id);
-        $data->update($request->all());
+
+        if ($request->has('barang')) {
+            $image = $request->file('barang');
+            $image->storeAs('public', $image->hashName());
+        }
+        $array = array(
+            'barang'     => $image->hashName(),
+            'nama_barang'     => $request->nama_barang,
+            'harga'   => $request->harga,
+            'keterangan'   => $request->keterangan,
+        );
+        $data->update($array);
         return redirect()->route('data_menu')->with('success', 'Data Barang Berhasil Diupdate!');
     }
     public function deletedata(Request $request, $id)
