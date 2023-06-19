@@ -54,7 +54,7 @@ Route::get('/tampilkandata/{id}', [BarangController::class, 'tampilkandata'])->n
 //Route::post('/updatedata/{id}', [BarangController::class, 'updatedata'])->name('updatedata');
 Route::match(['get', 'post'], '/updatedata/{id}', [BarangController::class, 'updatedata'])->name('updatedata');
 Route::get('/deletedata/{id}', [BarangController::class, 'deletedata'])->name('deletedata');
-Route::get('/logout', [LogoutController::class, 'index']);
+Route::get('/logout', [LogoutController::class, 'index'])->name('logout');
 
 Route::get('/pembayaran', [TransaksiController::class, 'index'])->name('page_pembayaran');
 Route::get('/pembayaran/pos', [TransaksiController::class, 'create'])->name('transaksi.create');
