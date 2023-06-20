@@ -30,8 +30,6 @@
                             <div class="card">
 
                                 <div class="card-body">
-                                    @include('pembayaran.pos')
-                                    @include('pembayaran._filter')
 
                                         <div class="table-responsive">
                                             <div id="products-datatable_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
