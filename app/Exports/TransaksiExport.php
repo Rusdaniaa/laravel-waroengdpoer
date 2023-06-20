@@ -13,6 +13,7 @@ class TransaksiExport implements FromCollection,WithHeadings
         $this->tanggal_awal = $tanggal_awal;
         $this->tanggal_akhir = $tanggal_akhir;
     }
+
     public function headings():array
     {
         return[
@@ -28,9 +29,9 @@ class TransaksiExport implements FromCollection,WithHeadings
     */
     public function collection()
     {
-       return ($this->tanggal_awal == '' && $this->tanggal_akhir == '')
+       return ($this->tanggal_awal == '' && $this->tanggal_akhir == '') 
         ?  Transaksi::all(['tgl_transaksi','nama_pemesan','total','bayar','kembalian'])
         :  Transaksi::whereBetween('tgl_transaksi',[$this->tanggal_awal,$this->tanggal_akhir])->get(['tgl_transaksi','nama_pemesan','total','bayar','kembalian']);
-
+        
     }
 }
