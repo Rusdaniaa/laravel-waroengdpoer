@@ -107,7 +107,9 @@ class TransaksiController extends Controller
         $transaksi->bayar = $request->input('bayar');
         $transaksi->kembalian = $request->input('bayar') - $request->input('total');
         $transaksi->update();
-        return redirect()->route('page_pembayaran');
+        $detail = TransaksiDetail::where('transaksi_id','=',$transaksi->id)->get();
+        // return redirect()->route('page_pembayaran');
+        return view('print',compact('detail','transaksi'));
     }
 
     public function export(Request $request)

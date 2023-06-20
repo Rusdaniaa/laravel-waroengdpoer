@@ -85,12 +85,6 @@
                             <span> Laporan </span>
                         </a>
                     </li>
-                    <li class="side-nav-item">
-                        <a href="apps-chat.html" class="side-nav-link">
-                            <i class="mdi mdi-account-edit me-1"></i>
-                            <span> Pengaturan </span>
-                        </a>
-                    </li>
 
                     <li class="side-nav-item">
                         <a href="{{ route('logout') }}" class="side-nav-link">
