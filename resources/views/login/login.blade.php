@@ -24,7 +24,7 @@
                         <div class="card">
 
                             <!-- Logo -->
-                            <div class="card-header pt-4 pb-4 text-center bg-primary">
+                            <div class="card-header pt-4 pb-4 text-center" style="background-color: #9f623f">
                                 <a href="index.html">
                                     <span><img src="assets/images/logo login.png" alt="" height="70"></span>
                                 </a>
@@ -52,16 +52,8 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="mb-3 mb-3">
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="checkbox-signin" checked>
-                                            <label class="form-check-label" for="checkbox-signin">Remember me</label>
-                                        </div>
-                                    </div>
-
                                     <div class="mb-3 mb-0 text-center">
-                                        <button class="btn btn-primary" type="submit"> Log In </button>
+                                        <button class="btn" style="background-color: #9f623f; color:white" type="submit"> Log In </button>
                                     </div>
 
                                     <div class="mb-3 mb-0 text-center">
