@@ -9,42 +9,53 @@
         padding: 0px;
         margin: 0px;
     }
+
     ul {
         list-style-type: none;
     }
+
     .text-bold {
         font-weight: bold;
     }
+
     /* table{
             table-layout:auto;
         } */
     .page-break {
         page-break-after: always;
     }
+
     .text-center {
         text-align: center;
     }
+
     .pl-1 {
         padding-left: 1rem;
     }
+
     .text-small {
         font-size: 13px;
     }
+
     .center {
         /* align-items: center; */
         width: 50%;
         margin: auto;
     }
+
     @page {
         size: A5;
         margin: 0;
     }
+
     @media print {
+
         html,
         body {
             width: 210mm;
             height: 297mm;
         }
+
         .page {
             margin: 0;
             border: initial;
@@ -121,8 +132,8 @@
                         <hr class="mt-2">
                     </div>
                     @endforeach
-
-
+                    
+                    
                     <!-- End barang loop -->
                     <div class="col-12">
                         <hr class="mt-2">
